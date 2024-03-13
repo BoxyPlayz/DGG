@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <title>The Catverse</title>
+  <title>MMO: The Catverse</title>
   <style>
     body {
-      color: #ffffff;
+      color: #000000;
       font-family: sans-serif;
       overflow: hidden;
       margin: 0;
       padding: 0;
     }
     :root, body.is-fullscreen {
-      background-color: #000000;
+      background-color: #ffffff;
     }
     [hidden] {
       display: none !important;
@@ -46,7 +46,7 @@
       cursor: default;
       user-select: none;
       -webkit-user-select: none;
-      background-color: #000000;
+      background-color: #ffffff;
     }
     #launch {
       background-color: rgba(0, 0, 0, 0.7);
@@ -142,7 +142,7 @@
     }
     
   </style>
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   
 </head>
 <body>
@@ -160,7 +160,7 @@
 
   <div id="loading" class="screen">
     <noscript>Enable JavaScript</noscript>
-    
+    <h1 class="loading-text">Calling Cats...</h1>
     
     <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
   </div>
@@ -224,7 +224,20 @@
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@MMO_ The Catverse.sb3"));
+        {const providers = {};
+providers.ws = new Scaffolding.Cloud.WebSocketProvider("wss://cl4.tnix.dev/", "872964292");
+providers.local = new Scaffolding.Cloud.LocalStorageProvider("cloudvariables:872964292");
+for (const provider of Object.values(providers)) scaffolding.addCloudProvider(provider);
+scaffolding.addCloudProviderOverride("☁ CLOUD 1", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ CLOUD 2", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ CLOUD 3", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ CLOUD 4", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ CLOUD 5", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ CLOUD 6", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ CLOUD 7", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ CLOUD 8", providers["ws"] || null);
+scaffolding.addCloudProviderOverride("☁ NOT CLOUD Save", providers["local"] || null);
+};
       } catch (error) {
         console.error(error);
       }
@@ -250,7 +263,7 @@
           }
         });
         const otherControlsExist = false;
-        const fillColor = otherControlsExist ? '#575E75' : '#ffffff';
+        const fillColor = otherControlsExist ? '#575E75' : '#000000';
         const updateFullScreen = () => {
           isFullScreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
           document.body.classList.toggle('is-fullscreen', isFullScreen);
