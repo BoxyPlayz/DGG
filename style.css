@@ -1,5 +1,4 @@
 body {
-    padding: 0px;
     background-color: green;
 }
 h1 {
@@ -29,17 +28,18 @@ article img {
     position: sticky;
     top: 0px;
     background-color: yellow;
-    padding: 0px;
     width: 100%;
+    gap: 10%;
 }
 
 .nav button {
+    display: flex;
     float: left;
-    color: #000000;
     text-align: center;
     text-decoration: none;
     font-size: 17px;
     background-color: blue;
+    margin-right: 1%;
 }
 
 .nav button:hover {
