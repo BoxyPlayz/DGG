@@ -20,6 +20,13 @@ article img {
     margin: auto;
     width: 80%;
     padding: 30px;
+}
+
+.archive {
+    background-color: rgb(255, 196, 0);
+    margin: auto;
+    width: 80%;
+    padding: 30px;
 
 }
 
